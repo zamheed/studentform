@@ -1,0 +1,103 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#<table border="1" >#}
+{#<tr><td>No</td>#}
+{#    <td>Name</td>#}
+{#    <td>Age</td>#}
+{#    <td>Gender</td>#}
+{#</tr>#}
+{#{% for student in object_list %}#}
+{##}
+{#    <tr><td>{{ student.id }}</td>#}
+{#        <td>{{ student.Name }}</td>#}
+{#    <td>{{ student.Age }}</td>#}
+{#        <td>{{ student.Gender }}</td></tr>#}
+{##}
+{#{% endfor %}#}
+{#</table>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="bg-container-contact100" style="background-image: url({% static 'images/bg-01.jpg' %});">
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <div class="contact100-form-title" style="background-image: url({% static 'images/bg-02.jpg' %});">
+            <span>Students List</span>
+        </div>
+
+        <div class="wrap-input100 validate-input" align="center">
+            <table border="2" align="center" bgcolor="#9370db">
+                <tr align="center" bgcolor="black" style="color: whitesmoke;font-family: 'Bookman Old Style'">
+                    <td>No</td>
+                    <td align="center">Name</td>
+                    <td align="center">Age</td>
+                    <td align="center">Gender</td>
+                </tr>
+                {% for student in object_list %}
+                    <tr align="center" style="font-family: 'Book Antiqua'">
+                        <td>{{ student.id }}</td>
+                        <td align="center">{{ student.Name }}</td>
+                        <td align="center">{{ student.Age }}</td>
+                        <td align="center">{{ student.Gender }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+                <a href="/back/"><h5 style="color: black">Back</h5></a>
+            </button>
+        </div>
+        <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+                <a href="/download/"><h5 style="color: black">Download as CSV</h5></a>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
